@@ -1,0 +1,260 @@
+<!DOCTYPE html> 
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Kenaf Dawit | Portfolio</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+    <style>    
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }  
+        body { line-height: 1.6; color: #adadad; scroll-behavior: smooth; background-color: #0f172a; }  
+ 
+        /* Navigation */ 
+        .navbar {  
+            background-color: #5f5f5f;  
+            padding: 1.2rem 5%;  
+            display: flex;  
+            justify-content: flex-end;  
+            align-items: center; 
+            position: fixed;  
+            width: 100%;  
+            top: 0;  
+            z-index: 1000;  
+            border-bottom: 1px solid rgba(0, 242, 254, 0.1); 
+        }  
+        .nav-links a {  
+            color: white;  
+            text-decoration: none;  
+            margin-left: 1.5rem;  
+            font-weight: 600;  
+            font-size: 0.9rem; 
+            transition: 0.3s;  
+        }  
+        .nav-links a:hover { color: #00f2fe; }  
+        .hero {  
+            height: 100vh;  
+            background: linear-gradient(135deg, #000000 0%, #1e293b 100%); /* Suuraan PC badee color dhufeera */ 
+            display: flex;  
+            align-items: center;  
+            justify-content: center;  
+            text-align: center;  
+            color: white;  
+        }  
+        .hero-content h1 { font-size: 3.8rem; margin-bottom: 10px; }  
+        .hero-content span { color: #00f2fe; }  
+        .btn-contact { display: inline-block; background: #00f2fe; color: #6d6d6d; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 30px; padding: 12px 30px; transition: 0.3s; }  
+ 
+        /* Section Global Styles */ 
+        section { padding: 100px 10%; color: white; } 
+        h2 { text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #00f2fe; } 
+ 
+        /* Services Section */ 
+        .services { background-color: #4987eb; } 
+        .service-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; } 
+        .service-box {  
+            background: #0f172a;  
+            padding: 40px;  
+            border-radius: 10px;  
+            text-align: center;  
+            transition: 0.3s; 
+            border: 1px solid rgba(0, 242, 254, 0.1); 
+        } 
+        .service-box:hover { transform: translateY(-10px); border-color: #00f2fe; } 
+        .service-box i { font-size: 3rem; color: #00f2fe; margin-bottom: 20px; } 
+ 
+        /* Skills Section */ 
+        .skills-container { display: flex; gap: 60px; flex-wrap: wrap; } 
+        .skills-content, .skills-bars { flex: 1; min-width: 300px; } 
+        .bar-container { margin-bottom: 25px; }  
+        .info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold; }  
+        .line { height: 10px; background: rgba(112, 57, 57, 0.792); border-radius: 10px; position: relative; }  
+        .line::before { content: ""; position: absolute; height: 100%; background: #00f2fe; border-radius: 10px; }  
+        .line.web::before { width: 88%; }  
+        .line.dev::before { width: 83%; }  
+        .line.problem::before { width: 85%; }  
+         
+        .read-more-btn { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            background-color: transparent; 
+            color: #00f2fe; 
+            border: 1px solid #00f2fe; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            transition: 0.3s; 
+        } 
+        .read-more-btn:hover { background: #00f2fe; color: #0f172a; }
+
+/* Contact Section */ 
+        .contact { background-color: #383735; } 
+        .contact-container { display: flex; gap: 50px; flex-wrap: wrap; } 
+        .contact-info { flex: 1; min-width: 300px; } 
+        .contact-form { flex: 1.5; min-width: 300px; display: flex; flex-direction: column; gap: 15px; } 
+         
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; font-size: 1.1rem; } 
+        .info-item i { color: #00f2fe; font-size: 1.5rem; } 
+ 
+        .contact-form input, .contact-form textarea {  
+            padding: 15px;  
+            border-radius: 4px;  
+            border: 1px solid #2c7beb;  
+            background: #0f172a;  
+            color: white;  
+            outline: none; 
+        } 
+        .contact-form input:focus, .contact-form textarea:focus { border-color: #00f2fe; } 
+        .btn-send {  
+            padding: 15px;  
+            background: #00f2fe;  
+            border: none;  
+            font-weight: bold;  
+            cursor: pointer;  
+            border-radius: 4px;  
+            color: #0f172a;  
+            transition: 0.3s; 
+            text-align: center; 
+            text-decoration: none; 
+        } 
+        .btn-send:hover { background: #4facfe; } 
+ 
+        /* Footer */ 
+        footer { background-color: #000000; color: #94a3b8; padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }  
+        footer span { color: #00f2fe; font-weight: bold; }  
+ 
+        @media (max-width: 768px) { .navbar { justify-content: center; padding: 1rem; } .nav-links { margin-top: 15px; } .hero-content h1 { font-size: 2.8rem; } }  
+        #GRADE11H1{ 
+            color: white; 
+            font-size: 1.1em; 
+            animation: kalebanimation 3s infinite steps(30) alternate; 
+            overflow: hidden; 
+            height: 20px; 
+             
+ 
+        } 
+        @keyframes kalebanimation{ 
+            from{ 
+                width: 100%; 
+                border-right: 2px solid red; 
+ 
+ 
+            } 
+            to{ 
+                width: 0%; 
+                border-right: 2px solid red; 
+            } 
+        } 
+    </style>  
+</head>  
+<body>  
+  
+    <nav class="navbar">  
+        <div class="nav-links">  
+            <a href="#home">Home</a>  
+            <a href="#about">About</a>  
+            <a href="#services">Services</a>  
+            <a href="#skill">Skills</a>  
+            <a href="#contact">Contact</a>  
+        </div>  
+    </nav>  
+  
+    <section id="home" class="hero">  
+        <div class="hero-content">  
+            <h1>Hi, I am <span>Kenaf Dawit</span></h1>  
+            <p style="font-size: 1.5rem; color: #cbd5e1;">Naturak science student & Web developer</p> 
+            <a href="#contact" class="btn-contact">Work With Me</a>  
+            
+        <span><h1 id="GRADE11H1">&nbsp;I&nbsp;AM&nbsp;GRADE&nbsp;11&nbsp;WEB&nbsp;DESIGN&nbsp;STUDENT</h1></span> 
+       </div> 
+    </section>  
+ 
+    <section id="about">  
+        <h2>About Me</h2>  
+        <p style="color: #cbd5e1; max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2rem;"> 
+            I am <b>Kenaf Dawit</b>. I build high-quality digital products with a focus on clean design and professional code.  
+            I am passionate about solving problems and helping clients reach their goals through technology. 
+        </p> 
+    </section>  
+ 
+    <section id="services" class="services"> 
+        <h2>My Services</h2> 
+        <div class="service-container"> 
+            <div class="service-box"> 
+                <i class="fa-solid fa-code"></i> 
+                <h3>Web Development</h3> 
+                <p>I will build you a fast, secure, and professional website tailored to your needs.</p> 
+            </div> 
+            <div class="service-box">
+
+<i class="fa-solid fa-palette"></i> 
+                <h3>Graphics Design</h3> 
+                <p>I can create stunning logos, brand identities, and visuals that represent your brand.</p> 
+            </div> 
+            <div class="service-box"> 
+                <i class="fa-solid fa-screwdriver-wrench"></i> 
+                <h3>Tech Support</h3> 
+                <p>I provide maintenance and technical guidance to ensure your systems run smoothly.</p> 
+            </div> 
+        </div> 
+    </section> 
+  
+    <section id="skill">  
+        <h2>My Skills</h2> 
+        <div class="skills-container"> 
+            <div class="skills-content"> 
+                <p style="color: #cbd5e1;">I have developed a strong foundation in modern web technologies and problem-solving techniques.</p> 
+                <a href="#home" class="read-more-btn">Read More</a> 
+            </div> 
+            <div class="skills-bars">  
+                <div class="bar-container">  
+                    <div class="info"><span>Web Design</span><span>88%</span></div>  
+                    <div class="line web"></div>  
+                </div>  
+                <div class="bar-container">  
+                    <div class="info"><span>Development</span><span>83%</span></div>  
+                    <div class="line dev"></div>  
+                </div>  
+                <div class="bar-container">  
+                    <div class="info"><span>Problem Solving</span><span>85%</span></div>  
+                    <div class="line problem"></div>  
+                </div>  
+            </div>  
+        </div> 
+    </section>  
+  
+    <section id="contact" class="contact">  
+        <h2>Contact Me</h2> 
+        <div class="contact-container"> 
+            <div class="contact-info"> 
+                <div class="info-item"> 
+                    <i class="fa-solid fa-user"></i> 
+                    <span>Kenaf Dawit</span> 
+                </div> 
+                <div class="info-item"> 
+                    <i class="fa-solid fa-envelope"></i> 
+                    <span>kenafdawit@example.com</span> 
+                </div> 
+                <div class="info-item"> 
+                    <i class="fa-solid fa-phone"></i> 
+                    <span>09****</span> 
+                </div> 
+                <div class="info-item"> 
+                    <i class="fa-solid fa-location-dot"></i> 
+                    <span>Addis Ababa, Ethiopia</span> 
+                </div> 
+            </div> 
+ 
+            <form action="#home" class="contact-form">  
+                <input type="text" placeholder="Your Name" required>  
+                <input type="email" placeholder="Your Email" required>  
+                <textarea placeholder="Tell me about your project..." rows="5" required></textarea>  
+                <button type="submit" class="btn-send">Send Message</button>  
+            </form>  
+        </div> 
+    </section>  
+  
+    <footer>  
+        <p>&copy; 2026 <span>Kenaf Dawit</span>. All Rights Reserved.</p>  
+    </footer>  
+</body>  
+</html>
